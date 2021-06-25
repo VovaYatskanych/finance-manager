@@ -10,10 +10,17 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var window: UIWindow?
+    var app: AppCoordinator?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let tabBarController = UITabBarController()
+        
+        let appCoordinator = AppCoordinator(tabBarController: tabBarController, window: window)
+        app = appCoordinator
+        appCoordinator.start()
+        
         return true
     }
 }
