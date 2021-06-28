@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86149AB92688B7A000C223E9 /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86149AB82688B7A000C223E9 /* WalletService.swift */; };
+		86149ABC2688BAE700C223E9 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86149ABB2688BAE700C223E9 /* Transaction.swift */; };
 		868DFDE02686612A00EBC282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DFDDF2686612A00EBC282 /* AppDelegate.swift */; };
 		868DFDE22686612A00EBC282 /* AppLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DFDE12686612A00EBC282 /* AppLifecycle.swift */; };
 		868DFDFC2686612C00EBC282 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 868DFDFB2686612C00EBC282 /* Assets.xcassets */; };
@@ -17,17 +19,20 @@
 		868DFE2A26866C7200EBC282 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DFE2926866C7200EBC282 /* MainViewController.swift */; };
 		868DFE2E26866C8700EBC282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 868DFE2D26866C8700EBC282 /* Main.storyboard */; };
 		868DFE3126866CA900EBC282 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DFE3026866CA900EBC282 /* MainCoordinator.swift */; };
+		868DFE4626867FED00EBC282 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DFE4526867FED00EBC282 /* Wallet.swift */; };
+		868DFE492686804400EBC282 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DFE482686804400EBC282 /* Currency.swift */; };
+		868DFE4D2687047600EBC282 /* WalletCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DFE4B2687047600EBC282 /* WalletCollectionViewCell.swift */; };
+		868DFE4E2687047600EBC282 /* WalletCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 868DFE4C2687047600EBC282 /* WalletCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		86149AB82688B7A000C223E9 /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
+		86149ABB2688BAE700C223E9 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		868DFDDB2686612A00EBC282 /* finance-manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "finance-manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		868DFDDF2686612A00EBC282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		868DFDE12686612A00EBC282 /* AppLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLifecycle.swift; sourceTree = "<group>"; };
 		868DFDE42686612A00EBC282 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		868DFDE72686612A00EBC282 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		868DFDE52686612A00EBC282 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		868DFDE72686612A00EBC282 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		868DFDE92686612A00EBC282 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		868DFDEB2686612A00EBC282 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		868DFDED2686612A00EBC282 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		868DFDEF2686612A00EBC282 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -44,6 +49,10 @@
 		868DFE2926866C7200EBC282 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		868DFE2D26866C8700EBC282 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		868DFE3026866CA900EBC282 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		868DFE4526867FED00EBC282 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		868DFE482686804400EBC282 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		868DFE4B2687047600EBC282 /* WalletCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCollectionViewCell.swift; sourceTree = "<group>"; };
+		868DFE4C2687047600EBC282 /* WalletCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86149AB72688B77800C223E9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				86149AB82688B7A000C223E9 /* WalletService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		868DFDD22686612A00EBC282 = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +230,7 @@
 		868DFE1B26866BAD00EBC282 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				86149AB72688B77800C223E9 /* Services */,
 				868DFE2826866C2200EBC282 /* Views */,
 				868DFE2726866C1A00EBC282 /* ViewControllers */,
 				868DFE2626866C1100EBC282 /* Coordinators */,
@@ -225,6 +243,9 @@
 		868DFE2426866BF800EBC282 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				868DFE4526867FED00EBC282 /* Wallet.swift */,
+				868DFE482686804400EBC282 /* Currency.swift */,
+				86149ABB2688BAE700C223E9 /* Transaction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +277,8 @@
 		868DFE2826866C2200EBC282 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				868DFE4B2687047600EBC282 /* WalletCollectionViewCell.swift */,
+				868DFE4C2687047600EBC282 /* WalletCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -318,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				868DFE09268662FB00EBC282 /* .gitkeep in Resources */,
+				868DFE4E2687047600EBC282 /* WalletCollectionViewCell.xib in Resources */,
 				868DFDFC2686612C00EBC282 /* Assets.xcassets in Resources */,
 				868DFDFF2686612C00EBC282 /* LaunchScreen.storyboard in Resources */,
 				868DFE2E26866C8700EBC282 /* Main.storyboard in Resources */,
@@ -331,12 +355,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86149ABC2688BAE700C223E9 /* Transaction.swift in Sources */,
 				868DFE19268668D300EBC282 /* AppCoordinator.swift in Sources */,
+				868DFE4626867FED00EBC282 /* Wallet.swift in Sources */,
 				868DFE3126866CA900EBC282 /* MainCoordinator.swift in Sources */,
 				868DFDE22686612A00EBC282 /* AppLifecycle.swift in Sources */,
+				868DFE492686804400EBC282 /* Currency.swift in Sources */,
 				868DFDE02686612A00EBC282 /* AppDelegate.swift in Sources */,
+				86149AB92688B7A000C223E9 /* WalletService.swift in Sources */,
 				868DFE0F2686676800EBC282 /* Coordinator.swift in Sources */,
 				868DFE2A26866C7200EBC282 /* MainViewController.swift in Sources */,
+				868DFE4D2687047600EBC282 /* WalletCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
