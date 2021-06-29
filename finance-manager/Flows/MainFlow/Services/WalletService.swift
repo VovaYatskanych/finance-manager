@@ -6,9 +6,15 @@
 //
 
 import UIKit
+import CoreData
 
 private extension Double {
     static let initialValue: Double = 0
+}
+
+private extension String {
+    static let persistentContainerName = "Finances"
+    static let walletEntityName = "WalletEntity"
 }
 
 final class WalletService {
@@ -16,18 +22,39 @@ final class WalletService {
     private var walletArray: [Wallet] = []
     private var usdRate: Double = .initialValue
     private var eurRate: Double = .initialValue
-    
-    func addWallet(_ wallet: Wallet) {
-        walletArray.append(wallet)
-    }
-    
-    var wallets: [Wallet] {
-        return walletArray
-    }
-    
     private var uahTotalAmount: Double = .initialValue
     private var usdTotalAmount: Double = .initialValue
     private var eurTotalAmount: Double = .initialValue
+    
+    private lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: .persistentContainerName)
+        container.loadPersistentStores { _, error in
+            if let error = error {
+                fatalError("Unable to load persistent stores: \(error)")
+            }
+        }
+        return container
+    }()
+    
+    private lazy var managedContext: NSManagedObjectContext = {
+        self.persistentContainer.viewContext
+    }()
+    
+    func addWallet(_ wallet: Wallet) {
+        walletArray.append(wallet)
+        saveWallets(wallet: wallet)
+    }
+    
+    var wallets: [Wallet] {
+        walletArray = []
+        let fetchRequest = NSFetchRequest<WalletEntity>(entityName: .walletEntityName)
+        if let result = try? self.managedContext.fetch(fetchRequest) as [WalletEntity] {
+            for item in result {
+                walletArray.append(Wallet(name: item.name, currency: item.convertedCurrency, amount: item.amount))
+            }
+        }
+        return walletArray
+    }
     
     func totalAmount(completion: @escaping (Double, Double, Double) -> Void) {
         DispatchQueue.global().async {
@@ -60,6 +87,21 @@ final class WalletService {
                     self.eurTotalAmount = .initialValue
                 }
             }
+        }
+    }
+    
+    private func saveWallets(wallet: Wallet) {
+        guard let entity = NSEntityDescription.entity(forEntityName: .walletEntityName, in: self.managedContext) else { return }
+        
+        let model = WalletEntity(entity: entity, insertInto: self.managedContext)
+        model.name = wallet.name
+        model.convertedCurrency = wallet.currency
+        model.amount = wallet.amount
+
+        do {
+            try self.managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
         }
     }
     

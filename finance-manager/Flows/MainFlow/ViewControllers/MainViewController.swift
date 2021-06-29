@@ -53,6 +53,7 @@ final class MainViewController: UIViewController {
     }
     
     private func setupUI() {
+        updateTotalAmount()
         totalWealthLabel.text = .totalWealthLabelText
         collectionView.dataSource = self
         collectionView.delegate = self
