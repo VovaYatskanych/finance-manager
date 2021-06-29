@@ -8,6 +8,5 @@
 struct Wallet {
     var name: String
     var currency: Currency
-    var amount: Int
-    var transactions: [Transaction]
+    var amount: Double
 }
