@@ -21,13 +21,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="243" height="120"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdQ-G3-TOW">
-                                <rect key="frame" x="20" y="10" width="54" height="25.5"/>
+                                <rect key="frame" x="10" y="10" width="54" height="25.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lki-b0-ZSa">
-                                <rect key="frame" x="169" y="84.5" width="54" height="25.5"/>
+                                <rect key="frame" x="179" y="84.5" width="54" height="25.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -35,10 +35,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="AdQ-G3-TOW" firstAttribute="leading" secondItem="UrW-ZL-r8X" secondAttribute="leading" constant="20" id="Z5E-Ei-mVd"/>
+                            <constraint firstItem="AdQ-G3-TOW" firstAttribute="leading" secondItem="UrW-ZL-r8X" secondAttribute="leading" constant="10" id="Z5E-Ei-mVd"/>
                             <constraint firstAttribute="bottom" secondItem="Lki-b0-ZSa" secondAttribute="bottom" constant="10" id="Zpr-PJ-732"/>
                             <constraint firstItem="AdQ-G3-TOW" firstAttribute="top" secondItem="UrW-ZL-r8X" secondAttribute="top" constant="10" id="lJ0-Mf-Y7U"/>
-                            <constraint firstAttribute="trailing" secondItem="Lki-b0-ZSa" secondAttribute="trailing" constant="20" id="oRw-0W-rux"/>
+                            <constraint firstAttribute="trailing" secondItem="Lki-b0-ZSa" secondAttribute="trailing" constant="10" id="oRw-0W-rux"/>
                         </constraints>
                     </view>
                 </subviews>

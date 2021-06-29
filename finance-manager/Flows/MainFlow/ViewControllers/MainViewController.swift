@@ -12,7 +12,10 @@ private extension String {
     static let mainViewControllerId = "mainViewController"
     static let walletNibName = "WalletCollectionViewCell"
     static let walletCellId = "walletCell"
-    static let totalWealthLabelText = "Total wealth: "
+    static let totalWealthLabelText = "Total wealth:"
+    static let uahWealthLabelTest = "UAH: "
+    static let usdWealthLabelTest = "USD: "
+    static let eurWealthLabelTest = "EUR: "
 }
 
 private extension Int {
@@ -23,6 +26,9 @@ final class MainViewController: UIViewController {
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var totalWealthLabel: UILabel!
+    @IBOutlet weak var totalUahWealthLabel: UILabel!
+    @IBOutlet weak var totalEurWealthLabel: UILabel!
+    @IBOutlet weak var totalUsdWealthLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
@@ -36,7 +42,17 @@ final class MainViewController: UIViewController {
         setupUI()
     }
     
-    func setupUI() {
+    @IBAction func addWalletTapped() {
+        guard let name = titleTextField.text, let amountString = amountTextField.text else { return }
+        guard let amount = Double(amountString) else { return }
+        walletService.addWallet(Wallet(name: name, currency: selectedCurrency, amount: amount))
+        self.collectionView.reloadData()
+        titleTextField.text = nil
+        amountTextField.text = nil
+        updateTotalAmount()
+    }
+    
+    private func setupUI() {
         totalWealthLabel.text = .totalWealthLabelText
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -46,14 +62,12 @@ final class MainViewController: UIViewController {
         collectionView.register(walletNib, forCellWithReuseIdentifier: .walletCellId)
     }
     
-    @IBAction func addWalletTapped() {
-        guard let name = titleTextField.text, let amountString = amountTextField.text else { return }
-        guard let amount = Int(amountString) else { return }
-        walletService.addWallet(Wallet(name: name, currency: selectedCurrency, amount: amount, transactions: []))
-        self.collectionView.reloadData()
-        titleTextField.text = nil
-        amountTextField.text = nil
-        totalWealthLabel.text = .totalWealthLabelText + String(walletService.totalAmount) + " " + Currency.uah.rawValue
+    private func updateTotalAmount() {
+        self.walletService.totalAmount { uah, usd, eur  in
+            self.totalUahWealthLabel.text = .uahWealthLabelTest + uah.clippedToString
+            self.totalUsdWealthLabel.text = .usdWealthLabelTest + usd.clippedToString
+            self.totalEurWealthLabel.text = .eurWealthLabelTest + eur.clippedToString
+        }
     }
 }
 
