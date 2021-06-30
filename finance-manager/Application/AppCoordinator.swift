@@ -7,35 +7,26 @@
 
 import UIKit
 
-private extension String {
-    static let mainItemTitle = "Main"
-}
-
 final class AppCoordinator: Coordinator {
     
-    private let tabBarController: UITabBarController
+    private let navigationController: UINavigationController
     private let window: UIWindow
     private var childCoordinators: [Coordinator] = []
     
-    init(tabBarController: UITabBarController, window: UIWindow) {
-        self.tabBarController = tabBarController
+    init(navigationController: UINavigationController, window: UIWindow) {
+        self.navigationController = navigationController
         self.window = window
     }
     
     func start() {
-        window.rootViewController = tabBarController
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
         showMainViewController()
-        setUpTabBar()
     }
-    
-    private func setUpTabBar() {
-        tabBarController.tabBar.items?[0].title = .mainItemTitle
-    }
-    
+        
     private func showMainViewController() {
-        let mainCoordinator = MainCoordinator(tabBarController: tabBarController)
+        let mainCoordinator = MainCoordinator(navigationController: navigationController)
         childCoordinators.append(mainCoordinator)
         mainCoordinator.start()
     }

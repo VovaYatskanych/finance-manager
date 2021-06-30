@@ -9,14 +9,14 @@ import UIKit
 
 final class MainCoordinator: Coordinator {
     
-    private let tabBarController: UITabBarController
+    private let navigationController: UINavigationController
     
-    init(tabBarController: UITabBarController) {
-        self.tabBarController = tabBarController
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
     
     func start() {
         let mainViewController = MainViewController.instantiateStatsViewController(coordinator: self)
-        tabBarController.setViewControllers([mainViewController], animated: true)
+        navigationController.pushViewController(mainViewController, animated: false)
     }
 }
