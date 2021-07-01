@@ -84,7 +84,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         let wallet = walletService.wallets[indexPath.row]
         cell.textLabel.text = wallet.name
-        cell.amountLabel.text = String(wallet.amount) + " " + wallet.currency.rawValue
+        cell.amountLabel.text = wallet.amount.clippedToString + " " + wallet.currency.rawValue
         return cell
     }
 }
