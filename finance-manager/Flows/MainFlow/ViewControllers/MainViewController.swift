@@ -16,6 +16,7 @@ private extension String {
     static let uahWealthLabelTest = "UAH: "
     static let usdWealthLabelTest = "USD: "
     static let eurWealthLabelTest = "EUR: "
+    static let mainTitle = "Wallets"
 }
 
 private extension Int {
@@ -53,6 +54,7 @@ final class MainViewController: UIViewController {
     }
     
     private func setupUI() {
+        title = .mainTitle
         updateTotalAmount()
         totalWealthLabel.text = .totalWealthLabelText
         collectionView.dataSource = self
@@ -82,7 +84,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         let wallet = walletService.wallets[indexPath.row]
         cell.textLabel.text = wallet.name
-        cell.amountLabel.text = String(wallet.amount) + " " + wallet.currency.rawValue
+        cell.amountLabel.text = wallet.amount.clippedToString + " " + wallet.currency.rawValue
         return cell
     }
 }

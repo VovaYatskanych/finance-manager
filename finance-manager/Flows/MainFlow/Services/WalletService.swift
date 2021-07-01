@@ -15,10 +15,13 @@ private extension Double {
 private extension String {
     static let persistentContainerName = "Finances"
     static let walletEntityName = "WalletEntity"
+    static let usdRateKey = "usdRateKey"
+    static let eurRateKey = "eurRateKey"
 }
 
 final class WalletService {
     
+    private let userDefaults = UserDefaults.standard
     private var walletArray: [Wallet] = []
     private var usdRate: Double = .initialValue
     private var eurRate: Double = .initialValue
@@ -58,13 +61,11 @@ final class WalletService {
     
     func totalAmount(completion: @escaping (Double, Double, Double) -> Void) {
         DispatchQueue.global().async {
-            self.getExchangeRate { [weak self] (usd, eur) in
+            self.getExchangeRate { [weak self] in
                 guard let self = self else { return }
                 
-                if let usd = usd, let eur = eur {
-                    self.usdRate = usd
-                    self.eurRate = eur
-                }
+                self.usdRate = self.userDefaults.double(forKey: .usdRateKey)
+                self.eurRate = self.userDefaults.double(forKey: .eurRateKey)
                 
                 for wallet in self.walletArray {
                     self.toUah(wallet: wallet) { value in
@@ -138,13 +139,15 @@ final class WalletService {
         }
     }
     
-    private func getExchangeRate(completion: @escaping (Double?, Double?) -> Void) {
-        CurrencyNetworkService.shared.getExchangeRate { data in
+    private func getExchangeRate(completion: @escaping () -> Void) {
+        CurrencyNetworkService.shared.getExchangeRate { [weak self] data in
             guard !data.isEmpty, let usdRate = data[0].rateSell, let eurRate = data[1].rateSell else {
-                completion(nil, nil)
+                completion()
                 return
             }
-            completion(usdRate, eurRate)
+            self?.userDefaults.set(usdRate, forKey: .usdRateKey)
+            self?.userDefaults.set(eurRate, forKey: .eurRateKey)
+            completion()
         }
     }
 }
