@@ -7,6 +7,10 @@
 
 import UIKit
 
+private extension CGFloat {
+    static let cornerRadius: CGFloat = 10
+}
+
 final class WalletCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var textLabel: UILabel!
@@ -15,6 +19,6 @@ final class WalletCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.masksToBounds = true
-        layer.cornerRadius = 10
+        layer.cornerRadius = .cornerRadius
     }
 }

@@ -13,9 +13,9 @@ private extension String {
     static let walletNibName = "WalletCollectionViewCell"
     static let walletCellId = "walletCell"
     static let totalWealthLabelText = "Total wealth:"
-    static let uahWealthLabelTest = "UAH: "
-    static let usdWealthLabelTest = "USD: "
-    static let eurWealthLabelTest = "EUR: "
+    static let uahWealthLabelTest = "UAH:"
+    static let usdWealthLabelTest = "USD:"
+    static let eurWealthLabelTest = "EUR:"
     static let mainTitle = "Wallets"
 }
 
@@ -23,8 +23,13 @@ private extension Int {
     static let numberOfPickerViewComponents = 1
 }
 
+private extension CGFloat {
+    static let cornerRadius: CGFloat = 10
+}
+
 final class MainViewController: UIViewController {
     
+    @IBOutlet weak var addWalletButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var totalWealthLabel: UILabel!
     @IBOutlet weak var totalUahWealthLabel: UILabel!
@@ -56,6 +61,7 @@ final class MainViewController: UIViewController {
     private func setupUI() {
         title = .mainTitle
         updateTotalAmount()
+        addWalletButton.layer.cornerRadius = .cornerRadius
         totalWealthLabel.text = .totalWealthLabelText
         collectionView.dataSource = self
         collectionView.delegate = self
