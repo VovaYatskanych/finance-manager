@@ -152,6 +152,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addWalletButton" destination="gew-gb-nQt" id="Rs6-1d-upd"/>
                         <outlet property="amountTextField" destination="FAq-yb-LcV" id="RJ1-3D-dDI"/>
                         <outlet property="collectionView" destination="nOC-8u-ett" id="3NG-S6-alh"/>
                         <outlet property="pickerView" destination="75d-IE-WTe" id="bR4-a7-uut"/>

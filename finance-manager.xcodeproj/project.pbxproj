@@ -12,7 +12,6 @@
 		862AA5742689E19600E53FD6 /* CurrencyNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862AA5732689E19600E53FD6 /* CurrencyNetworkService.swift */; };
 		862AA5782689E3F600E53FD6 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862AA5772689E3F600E53FD6 /* ExchangeRate.swift */; };
 		864B5B8F268B06D00039DCFB /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B5B8E268B06D00039DCFB /* Double+Extensions.swift */; };
-		868B5C2E268B86900046AAB1 /* Finances.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 868B5C2C268B86900046AAB1 /* Finances.xcdatamodeld */; };
 		868B5C32268B87760046AAB1 /* WalletEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B5C30268B87760046AAB1 /* WalletEntity+CoreDataClass.swift */; };
 		868B5C33268B87760046AAB1 /* WalletEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B5C31268B87760046AAB1 /* WalletEntity+CoreDataProperties.swift */; };
 		868DFDE02686612A00EBC282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DFDDF2686612A00EBC282 /* AppDelegate.swift */; };
@@ -28,6 +27,7 @@
 		868DFE492686804400EBC282 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DFE482686804400EBC282 /* Currency.swift */; };
 		868DFE4D2687047600EBC282 /* WalletCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DFE4B2687047600EBC282 /* WalletCollectionViewCell.swift */; };
 		868DFE4E2687047600EBC282 /* WalletCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 868DFE4C2687047600EBC282 /* WalletCollectionViewCell.xib */; };
+		8696C85A268DB67600BF9D75 /* Finances.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8696C858268DB67600BF9D75 /* Finances.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +36,8 @@
 		862AA5732689E19600E53FD6 /* CurrencyNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyNetworkService.swift; sourceTree = "<group>"; };
 		862AA5772689E3F600E53FD6 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		864B5B8E268B06D00039DCFB /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
-		868B5C2D268B86900046AAB1 /* Finances.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Finances.xcdatamodel; sourceTree = "<group>"; };
-		868B5C30268B87760046AAB1 /* WalletEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WalletEntity+CoreDataClass.swift"; path = "finance-manager/XcodeIntegration/WalletEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		868B5C31268B87760046AAB1 /* WalletEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WalletEntity+CoreDataProperties.swift"; path = "finance-manager/XcodeIntegration/WalletEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		868B5C30268B87760046AAB1 /* WalletEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalletEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		868B5C31268B87760046AAB1 /* WalletEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalletEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		868DFDDB2686612A00EBC282 /* finance-manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "finance-manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		868DFDDF2686612A00EBC282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		868DFDE12686612A00EBC282 /* AppLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLifecycle.swift; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		868DFE482686804400EBC282 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		868DFE4B2687047600EBC282 /* WalletCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCollectionViewCell.swift; sourceTree = "<group>"; };
 		868DFE4C2687047600EBC282 /* WalletCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletCollectionViewCell.xib; sourceTree = "<group>"; };
+		8696C859268DB67600BF9D75 /* Finances.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Finances.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +87,6 @@
 		868DFDD22686612A00EBC282 = {
 			isa = PBXGroup;
 			children = (
-				868B5C30268B87760046AAB1 /* WalletEntity+CoreDataClass.swift */,
-				868B5C31268B87760046AAB1 /* WalletEntity+CoreDataProperties.swift */,
 				868DFDDD2686612A00EBC282 /* finance-manager */,
 				868DFDDC2686612A00EBC282 /* Products */,
 			);
@@ -117,7 +115,7 @@
 				868DFDEC2686612A00EBC282 /* Validators */,
 				868DFDEE2686612A00EBC282 /* Controllers */,
 				868DFDF02686612A00EBC282 /* CodeAnalysis */,
-				868DFE07268662FB00EBC282 /* Resources */,
+				868DFE07268662FB00EBC282 /* Resurces */,
 				868DFDF22686612A00EBC282 /* XcodeIntegration */,
 				868DFDF42686612A00EBC282 /* Extensions */,
 			);
@@ -223,12 +221,12 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
-		868DFE07268662FB00EBC282 /* Resources */ = {
+		868DFE07268662FB00EBC282 /* Resurces */ = {
 			isa = PBXGroup;
 			children = (
-				868B5C2C268B86900046AAB1 /* Finances.xcdatamodeld */,
+				8696C858268DB67600BF9D75 /* Finances.xcdatamodeld */,
 			);
-			path = Resources;
+			path = Resurces;
 			sourceTree = "<group>";
 		};
 		868DFE0D2686675000EBC282 /* Protocols */ = {
@@ -255,6 +253,7 @@
 		868DFE2426866BF800EBC282 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8696C85C268DB68E00BF9D75 /* CoreDataModels */,
 				868DFE4526867FED00EBC282 /* Wallet.swift */,
 				868DFE482686804400EBC282 /* Currency.swift */,
 				86149ABB2688BAE700C223E9 /* Transaction.swift */,
@@ -294,6 +293,15 @@
 				868DFE4C2687047600EBC282 /* WalletCollectionViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8696C85C268DB68E00BF9D75 /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				868B5C30268B87760046AAB1 /* WalletEntity+CoreDataClass.swift */,
+				868B5C31268B87760046AAB1 /* WalletEntity+CoreDataProperties.swift */,
+			);
+			path = CoreDataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,12 +377,12 @@
 			files = (
 				86149ABC2688BAE700C223E9 /* Transaction.swift in Sources */,
 				868DFE19268668D300EBC282 /* AppCoordinator.swift in Sources */,
-				868B5C2E268B86900046AAB1 /* Finances.xcdatamodeld in Sources */,
 				864B5B8F268B06D00039DCFB /* Double+Extensions.swift in Sources */,
 				868DFE4626867FED00EBC282 /* Wallet.swift in Sources */,
 				868DFE3126866CA900EBC282 /* MainCoordinator.swift in Sources */,
 				868DFDE22686612A00EBC282 /* AppLifecycle.swift in Sources */,
 				868DFE492686804400EBC282 /* Currency.swift in Sources */,
+				8696C85A268DB67600BF9D75 /* Finances.xcdatamodeld in Sources */,
 				868DFDE02686612A00EBC282 /* AppDelegate.swift in Sources */,
 				862AA5782689E3F600E53FD6 /* ExchangeRate.swift in Sources */,
 				868B5C32268B87760046AAB1 /* WalletEntity+CoreDataClass.swift in Sources */,
@@ -581,14 +589,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		868B5C2C268B86900046AAB1 /* Finances.xcdatamodeld */ = {
+		8696C858268DB67600BF9D75 /* Finances.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				868B5C2D268B86900046AAB1 /* Finances.xcdatamodel */,
+				8696C859268DB67600BF9D75 /* Finances.xcdatamodel */,
 			);
-			currentVersion = 868B5C2D268B86900046AAB1 /* Finances.xcdatamodel */;
-			name = Finances.xcdatamodeld;
-			path = ../XcodeIntegration/Finances.xcdatamodeld;
+			currentVersion = 8696C859268DB67600BF9D75 /* Finances.xcdatamodel */;
+			path = Finances.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
