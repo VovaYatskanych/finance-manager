@@ -17,10 +17,22 @@ private extension String {
     static let usdWealthLabelTest = "USD:"
     static let eurWealthLabelTest = "EUR:"
     static let mainTitle = "Wallets"
+    static let nameErrorAlertMessage = "Enter name of wallet!"
+    static let amountErrorAlertMessage = "Incorrect amount. The amount must be greater than zero!"
+    static let bigAmountMassage = "Too big amount!"
 }
 
 private extension Int {
     static let numberOfPickerViewComponents = 1
+    static let maxAmountCharCount = 11
+}
+
+private extension Double {
+    static let minAmountValue: Double = 0
+}
+
+private extension CGFloat {
+    static let cornerRadius: CGFloat = 10
 }
 
 private extension CGFloat {
@@ -49,8 +61,23 @@ final class MainViewController: UIViewController {
     }
     
     @IBAction func addWalletTapped() {
-        guard let name = titleTextField.text, let amountString = amountTextField.text else { return }
-        guard let amount = Double(amountString) else { return }
+        guard let name = titleTextField.text,
+              let amountString = amountTextField.text,
+              amountString.count < .maxAmountCharCount else {
+            presentAlert(message: .bigAmountMassage)
+            return
+            
+        }
+        
+        if name == "" {
+            presentAlert(message: .nameErrorAlertMessage)
+            return
+        }
+
+        guard let amount = Double(amountString), amount >= .minAmountValue else {
+            presentAlert(message: .amountErrorAlertMessage)
+            return
+        }
         walletService.addWallet(Wallet(name: name, currency: selectedCurrency, amount: amount))
         self.collectionView.reloadData()
         titleTextField.text = nil
@@ -77,6 +104,13 @@ final class MainViewController: UIViewController {
             self.totalUsdWealthLabel.text = .usdWealthLabelTest + usd.clippedToString
             self.totalEurWealthLabel.text = .eurWealthLabelTest + eur.clippedToString
         }
+    }
+    
+    private func presentAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
     }
 }
 
