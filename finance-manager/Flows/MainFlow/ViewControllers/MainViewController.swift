@@ -62,10 +62,9 @@ final class MainViewController: UIViewController {
               amountString.count < .maxAmountCharCount else {
             presentAlert(message: .bigAmountMassage)
             return
-            
         }
         
-        if name == "" {
+        if name.isEmpty {
             presentAlert(message: .nameErrorAlertMessage)
             return
         }
