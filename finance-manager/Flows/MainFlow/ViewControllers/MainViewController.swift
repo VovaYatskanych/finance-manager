@@ -13,9 +13,9 @@ private extension String {
     static let walletNibName = "WalletCollectionViewCell"
     static let walletCellId = "walletCell"
     static let totalWealthLabelText = "Total wealth:"
-    static let uahWealthLabelTest = "UAH:"
-    static let usdWealthLabelTest = "USD:"
-    static let eurWealthLabelTest = "EUR:"
+    static let uahWealthLabelTest = "UAH: "
+    static let usdWealthLabelTest = "USD: "
+    static let eurWealthLabelTest = "EUR: "
     static let mainTitle = "Wallets"
     static let nameErrorAlertMessage = "Enter name of wallet!"
     static let amountErrorAlertMessage = "Incorrect amount. The amount must be greater than zero!"
@@ -29,10 +29,6 @@ private extension Int {
 
 private extension Double {
     static let minAmountValue: Double = 0
-}
-
-private extension CGFloat {
-    static let cornerRadius: CGFloat = 10
 }
 
 private extension CGFloat {
@@ -66,10 +62,9 @@ final class MainViewController: UIViewController {
               amountString.count < .maxAmountCharCount else {
             presentAlert(message: .bigAmountMassage)
             return
-            
         }
         
-        if name == "" {
+        if name.isEmpty {
             presentAlert(message: .nameErrorAlertMessage)
             return
         }
